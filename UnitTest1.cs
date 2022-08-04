@@ -1,3 +1,4 @@
+
 namespace autotests
 {
     public class Tests
