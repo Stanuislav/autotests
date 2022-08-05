@@ -12,13 +12,11 @@ namespace WebAdressbokTests
         private string header;
         private string footer;
 
-
-        public GroupDate(string name, string header, string footer)
+        public GroupDate(string name)
         {
             this.name = name;
-            this.header = header;
-            this.footer = footer;
         }
+
 
         public string Name
         {
