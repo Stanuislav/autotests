@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebAdressbokTests
 {
-    internal class DataUsers
+    public class DataUsers:TestBase
     {
 
         private string fistname;
