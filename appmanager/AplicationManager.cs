@@ -20,7 +20,7 @@ namespace WebAdressbokTests
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
         protected GroupHelper groupHelper;
-        protected CreationUsersHelper creationUsersHelper;
+        protected UsersHelper creationUsersHelper;
 
 
       
@@ -29,11 +29,13 @@ namespace WebAdressbokTests
         {  driver = new ChromeDriver();
             baseURL = "http://localhost/addressbook";
             verificationErrors = new StringBuilder();
-            loginHelper = new LoginHelper(driver);
-            navigator = new NavigationHelper(driver, baseURL);
-            groupHelper = new GroupHelper(driver);
-            creationUsersHelper = new CreationUsersHelper(driver);
+
+            loginHelper = new LoginHelper(this);
+            navigator = new NavigationHelper(this, baseURL);
+            groupHelper = new GroupHelper(this);
+            creationUsersHelper = new UsersHelper(this);
         }
+        public IWebDriver Driver { get { return driver; } }
 
         public void Stop()
         {
@@ -59,7 +61,7 @@ namespace WebAdressbokTests
            get { return navigator; }
         }
 
-        public CreationUsersHelper User
+        public UsersHelper User
         {
             get { return creationUsersHelper; }
         }
@@ -68,7 +70,7 @@ namespace WebAdressbokTests
         {
             get { return groupHelper; }
         }
-
+ 
 
     }
 

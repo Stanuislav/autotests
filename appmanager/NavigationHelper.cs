@@ -16,36 +16,41 @@ namespace WebAdressbokTests
 
         private string baseURL;
 
-        public NavigationHelper(IWebDriver driver, string baseURL)
-            : base(driver)
+        public NavigationHelper(AplicationManager manager, string baseURL)
+            : base(manager)
         {
             this.baseURL = baseURL;
         }
 
 
 
-        public void Openpagehome()
+        public NavigationHelper Openpagehome()
         {
             driver.Navigate().GoToUrl(baseURL);
+            return this;
         }
-        public void GoToHomePage()
+        public NavigationHelper GoToHomePage()
         {
             driver.FindElement(By.LinkText("home page")).Click();
+            return this;
         }
 
 
-        public void OpenPageNewContact()
+        public NavigationHelper OpenPageNewContact()
         {
             driver.FindElement(By.LinkText("add new")).Click();
+            return this;
         }
 
-        public void OpenToPageGroup()
+        public NavigationHelper OpenToPageGroup()
         {
             driver.FindElement(By.LinkText("groups")).Click();
+            return this;
         }
-        public void Logout() //Выход
+        public NavigationHelper Logout() //Выход
         {
             driver.FindElement(By.LinkText("Logout")).Click();
+            return this;
         }
 
     }

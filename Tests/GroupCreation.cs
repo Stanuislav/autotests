@@ -13,16 +13,21 @@ namespace WebAdressbokTests
         [Test]
         public void GroupCreationTest()
         {
-            app.Navigator.Openpagehome();
-            app.Auth.Login(new AccountData("admin", "secret"));
-            app.Navigator.OpenToPageGroup();
-            app.Groups.IntiNewGroupCreation();
+           
             GroupDate group = new GroupDate("1");
             group.Footer = "1";
             group.Header = "2";
-            app.Groups.FillGroupForm(group);
-            app.Groups.SumbitGroupCreation();
-            app.Groups.ReturnToGroupPage();
+            app.Groups.Create(group);
+            app.Navigator.Logout();
+        }
+        [Test]
+        public void ZiroGroupCreationTest()
+        { 
+
+            GroupDate group = new GroupDate("");
+            group.Footer = "";
+            group.Header = "";
+            app.Groups.Create(group);
             app.Navigator.Logout();
         }
     }

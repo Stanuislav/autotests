@@ -16,6 +16,8 @@ namespace WebAdressbokTests
         public void SetupTest()
         {
             app = new AplicationManager();
+            app.Navigator.Openpagehome();
+            app.Auth.Login(new AccountData("admin", "secret"));
         }
 
         [TearDown]

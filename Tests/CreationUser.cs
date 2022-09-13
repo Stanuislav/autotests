@@ -13,15 +13,11 @@ namespace WebAdressbokTests
         [Test]
         public void CreationUser()
         {
-            app.Navigator.Openpagehome();
-            app.Auth.Login(new AccountData("admin", "secret"));
-            app.Navigator.OpenPageNewContact();
+           
             DataUsers user = new DataUsers("stass", "surhovetskiy");
             user.Lastname = "vas";
-            app.User.CreationContact(user);
-            app.User.ClickCreationContact();
-            app.Navigator.GoToHomePage();
-            app.Navigator.Logout();
+            app.Navigator
+                .Logout();
         }
     }
 }

@@ -13,8 +13,11 @@ namespace WebAdressbokTests
     public class HelperBase
     {
         protected IWebDriver driver;
+        protected AplicationManager manager;
 
-        public HelperBase (IWebDriver driver)
-        { this.driver = driver; }
+        public HelperBase (AplicationManager manager)
+        {
+            this.manager = manager;
+            this.driver = manager.Driver; }
     }
 }

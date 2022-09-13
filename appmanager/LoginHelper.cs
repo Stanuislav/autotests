@@ -14,7 +14,7 @@ namespace WebAdressbokTests
     {
 
 
-        public LoginHelper(IWebDriver driver):base(driver)
+        public LoginHelper(AplicationManager manager) :base(manager)
         {
         }
 
