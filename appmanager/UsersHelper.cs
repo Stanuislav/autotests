@@ -34,6 +34,24 @@ namespace WebAdressbokTests
             return this;
         }
 
+        public UsersHelper Delete(int p)
+        {
+            SelectEditUser(p);
+            SumbitUserDelete();
+            return this;
+
+        }
+
+        public UsersHelper SelectCheckBox(int i) // Выбор чек-бокса 
+        {
+            driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + i + "]")).Click();
+            return this;
+        }
+        public UsersHelper SumbitUserDelete()   //Нажать кнопку делите
+        {
+            driver.FindElement(By.XPath("(//input[@value='Delete'])")).Click();
+            return this;
+        }
         public UsersHelper SumbitUserModification()   //Нажатия кнопки обновить пользователя
         {
             driver.FindElement(By.Name("update")).Click();
@@ -42,7 +60,7 @@ namespace WebAdressbokTests
 
         public UsersHelper SelectEditUser(int p) //выбор пользователя любого
         {
-           driver.FindElement(By.XPath("(//a[href='edit.php?id=[]'])[" + p + "]")).Click();
+           driver.FindElement(By.XPath("(//a[@href='edit.php?id=" + p + "'])")).Click();
             return this;
        }
 
